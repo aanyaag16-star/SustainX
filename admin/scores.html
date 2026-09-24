@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Update Scores &amp; Audits | SUSTAINX Admin</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+<body>
+
+  <div class="admin-layout">
+    
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-sidebar-header">
+        <a href="dashboard.html" class="brand-logo" style="color: #FFF;">
+          <div class="brand-logo-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 12"/></svg>
+          </div>
+          <div>
+            <span>SUSTAIN<span style="color: #55D48D;">X</span></span>
+            <span class="brand-tag" style="color: #79E2A8;">Admin Console</span>
+          </div>
+        </a>
+      </div>
+
+      <nav class="admin-sidebar-menu">
+        <a href="dashboard.html" class="admin-nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="scores.html" class="admin-nav-item active">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          <span>Update Scores</span>
+        </a>
+
+        <a href="schools.html" class="admin-nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Manage Schools</span>
+        </a>
+
+        <a href="history.html" class="admin-nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Score History</span>
+        </a>
+
+        <a href="announcements.html" class="admin-nav-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+          <span>Announcements</span>
+        </a>
+
+        <div style="margin: 1.5rem 0 0.5rem; padding-top: 1rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+          <a href="../leaderboard.html" class="admin-nav-item" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <span>Live Leaderboard ↗</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <a href="#" class="admin-nav-item admin-logout-btn" style="color: #FF8E8E;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          <span>Log Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <div class="admin-main">
+      
+      <!-- Topbar -->
+      <header class="admin-topbar">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <button class="btn btn-icon admin-mobile-toggle" id="adminSidebarToggle" style="display: none;" aria-label="Toggle drawer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div>
+            <h2 style="font-size: 1.25rem;">Record Verified Green Points</h2>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <span class="badge badge-success">Audit Session Active</span>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="admin-content">
+        <div class="container-narrow">
+          
+          <div class="card" style="padding: 2.25rem;">
+            
+            <div style="margin-bottom: 2rem; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 1.25rem;">
+              <h3 style="font-size: 1.4rem; margin-bottom: 0.35rem; color: var(--color-dark-forest);">Green Score Entry Form</h3>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted);">
+                Audited score entries immediately update the official leaderboard. Total points are calculated dynamically exclusively from approved records.
+              </p>
+            </div>
+
+            <form id="scoreEntryForm">
+              
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                
+                <!-- School Select -->
+                <div class="form-group">
+                  <label class="form-label" for="scoreSchoolSelect">Select School *</label>
+                  <select id="scoreSchoolSelect" class="form-control form-select" required>
+                    <option value="">-- Choose Participating School --</option>
+                  </select>
+                </div>
+
+                <!-- Category Select -->
+                <div class="form-group">
+                  <label class="form-label" for="scoreCategorySelect">Scoring Category *</label>
+                  <select id="scoreCategorySelect" class="form-control form-select" required>
+                    <option value="Sustainable Events">Sustainable Events</option>
+                    <option value="Reuse & Resource Sharing">Reuse & Resource Sharing</option>
+                    <option value="Waste Collection Drive">Waste Collection Drive</option>
+                    <option value="Sustainability Participation">Sustainability Participation</option>
+                    <option value="Innovation Bonus">Innovation Bonus</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <!-- Guideline Presets Quick-Selector -->
+              <div class="form-group">
+                <label class="form-label" for="scoreActivityPreset" style="display: flex; justify-content: space-between;">
+                  <span>Auto-Fill From Competition Rubrics (Optional)</span>
+                  <span style="color: var(--color-primary-green); font-weight: 600;">⚡ Instant Presets</span>
+                </label>
+                <select id="scoreActivityPreset" class="form-control form-select" style="background-color: #FAFCFA;">
+                  <!-- Populated automatically based on category selection -->
+                </select>
+                <div class="form-hint">Selecting a preset automatically pre-fills the standard guideline points and activity description.</div>
+              </div>
+
+              <!-- Activity / Reason -->
+              <div class="form-group">
+                <label class="form-label" for="scoreActivityInput">Activity Name / Event Title *</label>
+                <input type="text" id="scoreActivityInput" class="form-control" placeholder="e.g. Annual Tech Fest (Plastic-Free Event)" required />
+              </div>
+
+              <!-- Points & Date -->
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <div class="form-group">
+                  <label class="form-label" for="scorePointsInput">Green Points (Enter negative for penalty) *</label>
+                  <input type="number" id="scorePointsInput" class="form-control" placeholder="e.g. 5000 or -2000" step="50" required />
+                  <div class="form-hint">Use positive integers for achievements (e.g. 5000) or negative for penalties (e.g. -2000).</div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="scoreDateInput">Activity Date *</label>
+                  <input type="date" id="scoreDateInput" class="form-control" required />
+                </div>
+              </div>
+
+              <!-- Verification Status -->
+              <div class="form-group">
+                <label class="form-label" for="scoreStatusSelect">Audit Verification Status *</label>
+                <select id="scoreStatusSelect" class="form-control form-select" required>
+                  <option value="approved" selected>Approved (Contributes directly to official leaderboard)</option>
+                  <option value="pending">Pending Audit Review (Does NOT contribute to score yet)</option>
+                  <option value="rejected">Rejected (Discarded / Disqualified)</option>
+                </select>
+              </div>
+
+              <!-- Audit Remarks -->
+              <div class="form-group">
+                <label class="form-label" for="scoreRemarksInput">Audit Verification Remarks / Field Findings</label>
+                <textarea id="scoreRemarksInput" class="form-control" rows="3" placeholder="e.g. Zero plastic bottles confirmed. Standees limited to 2. Handover receipt verified."></textarea>
+              </div>
+
+              <!-- Evidence Upload URL -->
+              <div class="form-group">
+                <label class="form-label" for="scoreEvidenceInput">Evidence Photo URL / Weigh-Slip Document (Optional)</label>
+                <input type="url" id="scoreEvidenceInput" class="form-control" placeholder="https://..." />
+                <div class="form-hint">Link to photos, weigh-slips, or cloud storage evidence.</div>
+              </div>
+
+              <div style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 1rem;">
+                <button type="reset" class="btn btn-secondary">Reset Form</button>
+                <button type="submit" class="btn btn-primary btn-lg">
+                  <span>ADD SCORE ENTRY</span>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </button>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../js/data-store.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/firebase-config.js"></script>
+  <script src="../js/admin.js"></script>
+</body>
+</html>

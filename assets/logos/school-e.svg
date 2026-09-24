@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <rect width="120" height="120" rx="30" fill="#FBF5F0" />
+  <circle cx="60" cy="60" r="44" fill="#FFFFFF" stroke="#C48249" stroke-width="2.5" />
+  <!-- Book and olive branch for Humanities -->
+  <path d="M40 68 C48 62 56 65 60 70 C64 65 72 62 80 68 L80 44 C72 38 64 41 60 46 C56 41 48 38 40 44 Z" fill="#DFF3E5" stroke="#164A35" stroke-width="2" />
+  <circle cx="60" cy="38" r="3.5" fill="#D6A84F" />
+  <text x="60" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#164A35">HUMANITIES</text>
+</svg>

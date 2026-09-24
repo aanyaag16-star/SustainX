@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <rect width="120" height="120" rx="30" fill="#EBF6F9" />
+  <circle cx="60" cy="60" r="44" fill="#FFFFFF" stroke="#2B7CB3" stroke-width="2.5" />
+  <!-- Health & science cross with leaf -->
+  <path d="M54 42 H66 V54 H78 V66 H66 V78 H54 V66 H42 V54 H54 Z" fill="#DFF3E5" stroke="#164A35" stroke-width="2" />
+  <circle cx="60" cy="60" r="4" fill="#238B5A" />
+  <text x="60" y="100" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#164A35">SCIENCES</text>
+</svg>

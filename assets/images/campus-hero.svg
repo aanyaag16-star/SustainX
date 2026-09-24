@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" fill="none">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EBF7F0" />
+      <stop offset="60%" stop-color="#DDF1E5" />
+      <stop offset="100%" stop-color="#CBE9D6" />
+    </linearGradient>
+    <linearGradient id="hillGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#84C69E" />
+      <stop offset="100%" stop-color="#55A776" />
+    </linearGradient>
+    <linearGradient id="hillGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#419363" />
+      <stop offset="100%" stop-color="#238B5A" />
+    </linearGradient>
+    <linearGradient id="campusLawn" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2E9E67" />
+      <stop offset="100%" stop-color="#164A35" />
+    </linearGradient>
+    <linearGradient id="buildingGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2F2EB" />
+      <stop offset="100%" stop-color="#BEE4D0" />
+    </linearGradient>
+    <linearGradient id="solarPanel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#164A35" />
+      <stop offset="50%" stop-color="#256B50" />
+      <stop offset="100%" stop-color="#164A35" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="1600" height="900" fill="url(#skyGrad)" />
+
+  <!-- Distant mountain hills -->
+  <path d="M0 520 Q350 430 700 500 T1400 480 Q1500 490 1600 520 L1600 900 L0 900 Z" fill="url(#hillGrad1)" opacity="0.6" />
+  <path d="M0 580 Q450 480 900 560 T1600 540 L1600 900 L0 900 Z" fill="url(#hillGrad2)" opacity="0.8" />
+
+  <!-- Sustainable campus wind turbines in distance -->
+  <g transform="translate(1320, 360)" opacity="0.45">
+    <line x1="0" y1="0" x2="0" y2="140" stroke="#164A35" stroke-width="3" />
+    <circle cx="0" cy="0" r="4" fill="#164A35" />
+    <line x1="0" y1="0" x2="0" y2="-45" stroke="#164A35" stroke-width="2" />
+    <line x1="0" y1="0" x2="38" y2="22" stroke="#164A35" stroke-width="2" />
+    <line x1="0" y1="0" x2="-38" y2="22" stroke="#164A35" stroke-width="2" />
+  </g>
+  <g transform="translate(1420, 390)" opacity="0.35">
+    <line x1="0" y1="0" x2="0" y2="120" stroke="#164A35" stroke-width="2.5" />
+    <circle cx="0" cy="0" r="3" fill="#164A35" />
+    <line x1="0" y1="0" x2="0" y2="-38" stroke="#164A35" stroke-width="1.8" />
+    <line x1="0" y1="0" x2="32" y2="19" stroke="#164A35" stroke-width="1.8" />
+    <line x1="0" y1="0" x2="-32" y2="19" stroke="#164A35" stroke-width="1.8" />
+  </g>
+
+  <!-- Modern University Campus Main Building -->
+  <g transform="translate(420, 380)">
+    <!-- Central Hall -->
+    <rect x="240" y="40" width="280" height="260" rx="8" fill="#FFFFFF" stroke="#D3E7DC" stroke-width="2" />
+    <rect x="270" y="0" width="220" height="40" rx="6" fill="#164A35" />
+    <!-- Solar Panels on Roof -->
+    <g transform="translate(280, 8)">
+      <rect x="0" y="0" width="45" height="24" rx="2" fill="url(#solarPanel)" stroke="#D6A84F" stroke-width="1" />
+      <rect x="52" y="0" width="45" height="24" rx="2" fill="url(#solarPanel)" stroke="#D6A84F" stroke-width="1" />
+      <rect x="104" y="0" width="45" height="24" rx="2" fill="url(#solarPanel)" stroke="#D6A84F" stroke-width="1" />
+      <rect x="156" y="0" width="45" height="24" rx="2" fill="url(#solarPanel)" stroke="#D6A84F" stroke-width="1" />
+    </g>
+    <!-- Glass Atrium Windows -->
+    <g transform="translate(265, 60)">
+      <rect x="0" y="0" width="65" height="45" rx="4" fill="url(#buildingGlass)" />
+      <rect x="80" y="0" width="65" height="45" rx="4" fill="url(#buildingGlass)" />
+      <rect x="160" y="0" width="65" height="45" rx="4" fill="url(#buildingGlass)" />
+
+      <rect x="0" y="60" width="65" height="45" rx="4" fill="url(#buildingGlass)" />
+      <rect x="80" y="60" width="65" height="45" rx="4" fill="url(#buildingGlass)" />
+      <rect x="160" y="60" width="65" height="45" rx="4" fill="url(#buildingGlass)" />
+
+      <rect x="0" y="120" width="65" height="45" rx="4" fill="url(#buildingGlass)" />
+      <rect x="80" y="120" width="65" height="45" rx="4" fill="url(#buildingGlass)" />
+      <rect x="160" y="120" width="65" height="45" rx="4" fill="url(#buildingGlass)" />
+      
+      <!-- Main grand eco-entrance -->
+      <path d="M90 190 H140 V240 H90 Z" fill="#164A35" />
+    </g>
+
+    <!-- Left Wing (Engineering & Labs) -->
+    <rect x="80" y="90" width="160" height="210" rx="6" fill="#F8FCF9" stroke="#D3E7DC" stroke-width="1.5" />
+    <rect x="100" y="70" width="120" height="20" rx="3" fill="#238B5A" />
+    <!-- Rooftop garden on left wing -->
+    <circle cx="120" cy="65" r="12" fill="#238B5A" />
+    <circle cx="145" cy="62" r="14" fill="#164A35" />
+    <circle cx="170" cy="66" r="11" fill="#30A86F" />
+    <!-- Windows -->
+    <g transform="translate(100, 110)">
+      <rect x="0" y="0" width="35" height="35" rx="3" fill="url(#buildingGlass)" />
+      <rect x="45" y="0" width="35" height="35" rx="3" fill="url(#buildingGlass)" />
+      <rect x="90" y="0" width="35" height="35" rx="3" fill="url(#buildingGlass)" />
+      
+      <rect x="0" y="50" width="35" height="35" rx="3" fill="url(#buildingGlass)" />
+      <rect x="45" y="50" width="35" height="35" rx="3" fill="url(#buildingGlass)" />
+      <rect x="90" y="50" width="35" height="35" rx="3" fill="url(#buildingGlass)" />
+
+      <rect x="0" y="100" width="35" height="35" rx="3" fill="url(#buildingGlass)" />
+      <rect x="45" y="100" width="35" height="35" rx="3" fill="url(#buildingGlass)" />
+      <rect x="90" y="100" width="35" height="35" rx="3" fill="url(#buildingGlass)" />
+    </g>
+
+    <!-- Right Wing (Sustainability Library) -->
+    <rect x="520" y="110" width="180" height="190" rx="6" fill="#F8FCF9" stroke="#D3E7DC" stroke-width="1.5" />
+    <polygon points="520,110 610,60 700,110" fill="#164A35" />
+    <g transform="translate(545, 130)">
+      <rect x="0" y="0" width="38" height="35" rx="3" fill="url(#buildingGlass)" />
+      <rect x="48" y="0" width="38" height="35" rx="3" fill="url(#buildingGlass)" />
+      <rect x="96" y="0" width="38" height="35" rx="3" fill="url(#buildingGlass)" />
+
+      <rect x="0" y="50" width="38" height="35" rx="3" fill="url(#buildingGlass)" />
+      <rect x="48" y="50" width="38" height="35" rx="3" fill="url(#buildingGlass)" />
+      <rect x="96" y="50" width="38" height="35" rx="3" fill="url(#buildingGlass)" />
+    </g>
+  </g>
+
+  <!-- Foreground campus green lawn -->
+  <path d="M0 640 Q400 620 800 640 T1600 630 L1600 900 L0 900 Z" fill="url(#campusLawn)" />
+
+  <!-- Campus Trees (Lush green foliage) -->
+  <g transform="translate(180, 520)">
+    <rect x="55" y="80" width="14" height="60" fill="#4B382A" rx="4" />
+    <circle cx="62" cy="70" r="50" fill="#164A35" />
+    <circle cx="45" cy="50" r="35" fill="#238B5A" />
+    <circle cx="80" cy="55" r="38" fill="#34A853" />
+  </g>
+  <g transform="translate(320, 560)">
+    <rect x="35" y="60" width="10" height="45" fill="#4B382A" rx="3" />
+    <circle cx="40" cy="45" r="36" fill="#238B5A" />
+    <circle cx="55" cy="35" r="28" fill="#58C58D" />
+  </g>
+  <g transform="translate(1180, 540)">
+    <rect x="45" y="70" width="12" height="50" fill="#4B382A" rx="3" />
+    <circle cx="50" cy="55" r="45" fill="#164A35" />
+    <circle cx="35" cy="40" r="32" fill="#238B5A" />
+    <circle cx="65" cy="35" r="30" fill="#30A86F" />
+  </g>
+  <g transform="translate(1340, 580)">
+    <rect x="30" y="50" width="10" height="40" fill="#4B382A" rx="3" />
+    <circle cx="35" cy="40" r="34" fill="#238B5A" />
+    <circle cx="50" cy="30" r="26" fill="#58C58D" />
+  </g>
+
+  <!-- Winding eco-pathway -->
+  <path d="M680 900 C680 820, 720 740, 750 670 C760 650, 755 640, 755 640 L720 640 C720 640, 680 730, 640 820 C620 860, 600 900, 600 900 Z" fill="#E8E2CD" />
+
+  <!-- Subtle solar streetlights -->
+  <g transform="translate(620, 680)">
+    <line x1="0" y1="0" x2="0" y2="80" stroke="#FFFFFF" stroke-width="2.5" />
+    <circle cx="0" cy="0" r="5" fill="#D6A84F" />
+    <line x1="-12" y1="-6" x2="12" y2="-6" stroke="#164A35" stroke-width="2" />
+  </g>
+  <g transform="translate(780, 720)">
+    <line x1="0" y1="0" x2="0" y2="90" stroke="#FFFFFF" stroke-width="2.5" />
+    <circle cx="0" cy="0" r="5" fill="#D6A84F" />
+    <line x1="-12" y1="-6" x2="12" y2="-6" stroke="#164A35" stroke-width="2" />
+  </g>
+</svg>

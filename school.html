@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Profile | SUSTAINX Green Campus Challenge</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 12"/>
+          </svg>
+        </div>
+        <div>
+          <span>SUSTAIN<span class="text-green">X</span></span>
+          <span class="brand-tag">Green Campus</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="leaderboard.html" class="nav-link">Leaderboard</a></li>
+        <li><a href="schools.html" class="nav-link active">Schools</a></li>
+        <li><a href="categories.html" class="nav-link">Categories</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-secondary btn-sm">Log In</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+        <button class="hamburger-btn" aria-label="Toggle menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Profile Hero Header -->
+  <header class="section-sm" style="background: linear-gradient(180deg, #F7F5EA 0%, #EBF6EF 100%); border-bottom: 1px solid var(--color-border-subtle); padding-top: 3.5rem;">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
+        
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+          <img id="schoolProfileLogo" src="assets/logos/school-a.svg" alt="School Logo" style="width: 90px; height: 90px; border-radius: 20px; background: #FFF; border: 2.5px solid var(--color-border); padding: 8px; box-shadow: var(--shadow-md); object-fit: contain;" />
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.35rem;">
+              <span id="schoolProfileShortName" class="badge badge-info" style="font-size: 0.85rem;">-</span>
+              <span class="badge badge-demo">Verified Campus</span>
+            </div>
+            <h1 id="schoolProfileName" style="font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 0.4rem; color: var(--color-dark-forest);">Loading School...</h1>
+            <p id="schoolProfileDesc" style="font-size: 0.95rem; max-width: 600px; color: var(--color-text-muted); line-height: 1.5;">-</p>
+          </div>
+        </div>
+
+        <!-- KPI Score Badges -->
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <div class="card" style="padding: 1.25rem 1.75rem; text-align: center; min-width: 140px;">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Current Rank</div>
+            <div id="schoolProfileRank" style="font-size: 2.2rem; font-weight: 800; color: #B38600;">#-</div>
+          </div>
+
+          <div class="card" style="padding: 1.25rem 1.75rem; text-align: center; min-width: 170px; border-color: rgba(35, 139, 90, 0.3);">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase;">Total Green Points</div>
+            <div id="schoolProfilePoints" style="font-size: 2.2rem; font-weight: 800; color: var(--color-primary-green);">0</div>
+            <div style="font-size: 0.72rem; color: var(--color-primary-green); font-weight: 700;">Verified Points</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Profile Content & Analytics -->
+  <main class="section">
+    <div class="container">
+      
+      <!-- Top Grid: Performance Progression Chart & Category Breakdown -->
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; margin-bottom: 2.5rem;">
+        
+        <!-- Left: Monthly Line Chart -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <div>
+              <h2 style="font-size: 1.35rem; margin-bottom: 0.2rem;">Monthly Score Progression</h2>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Cumulative points earned across active competition cycles.</p>
+            </div>
+            <span class="badge badge-info">2026–27 Academic Cycle</span>
+          </div>
+
+          <!-- Responsive Canvas Line Chart -->
+          <div style="width: 100%; height: 260px; position: relative;">
+            <canvas id="progressionChart" style="width: 100%; height: 100%;"></canvas>
+          </div>
+        </div>
+
+        <!-- Right: Category Breakdown with Animated Progress Bars -->
+        <div class="card">
+          <div style="margin-bottom: 1.5rem;">
+            <h2 style="font-size: 1.35rem; margin-bottom: 0.2rem;">Track-Wise Performance</h2>
+            <p style="font-size: 0.85rem; color: var(--color-text-muted);">Points earned across each of the 5 SustainX categories.</p>
+          </div>
+
+          <div id="categoryBreakdownContainer">
+            <!-- Rendered dynamically by scores.js with animated bars -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Achievements & Score Log Grid -->
+      <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2rem;">
+        
+        <!-- Left: Key Achievements -->
+        <div>
+          <div class="card" style="margin-bottom: 1.5rem;">
+            <h2 style="font-size: 1.25rem; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span>🏆</span> School Milestones
+            </h2>
+            <div id="achievementsList">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <div class="card" style="background: var(--color-light-green); border: none;">
+            <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--color-dark-forest);">Green Audit Note</h3>
+            <p style="font-size: 0.85rem; color: var(--color-dark-forest); line-height: 1.5;">
+              All points are audited weekly. If you notice a discrepancy with your school's submitted event verification, contact your faculty green coordinator or the SustainX Audit Secretariat.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Verified Score History -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+            <div>
+              <h2 style="font-size: 1.25rem; margin-bottom: 0.2rem;">Verified Activity History</h2>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted);">Chronological log of verified green scores, drives, and audits.</p>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Category</th>
+                  <th>Activity / Event</th>
+                  <th>Points</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="schoolHistoryTableBody">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Standard Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo" style="color: #FFF;">
+            <div class="brand-logo-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 12"/></svg>
+            </div>
+            <div>
+              <span>SUSTAIN<span style="color: #55D48D;">X</span></span>
+              <span class="brand-tag" style="color: #79E2A8;">Green Campus</span>
+            </div>
+          </a>
+          <p>Inspiring inter-school collaboration, zero single-use plastic, and circular sustainability on campus.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="leaderboard.html" class="footer-link">Leaderboard</a></li>
+            <li><a href="schools.html" class="footer-link">Schools</a></li>
+            <li><a href="categories.html" class="footer-link">Categories</a></li>
+            <li><a href="about.html" class="footer-link">About</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Competition</h4>
+          <ul class="footer-links">
+            <li><a href="categories.html" class="footer-link">Sustainable Events</a></li>
+            <li><a href="categories.html" class="footer-link">Resource Sharing</a></li>
+            <li><a href="categories.html" class="footer-link">Waste Drives</a></li>
+            <li><a href="categories.html" class="footer-link">Innovation Grants</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Secretariat</h4>
+          <div class="footer-contact-item">
+            <span>📍</span>
+            <span>Hall 4B, Center for Sustainable Development</span>
+          </div>
+          <div class="footer-contact-item">
+            <span>✉️</span>
+            <span>audit@sustainx.edu</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 SUSTAINX – Green Campus Challenge. All rights reserved.</div>
+        <div>
+          <a href="admin/login.html" class="admin-portal-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Admin Portal
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data-store.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/scores.js"></script>
+</body>
+</html>

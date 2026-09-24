@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up | SUSTAINX Green Campus Challenge</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; background: radial-gradient(circle at 50% 10%, #EBF7F0 0%, #F7F5EA 100%);">
+
+  <!-- Header -->
+  <header style="padding: 1.5rem 0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 12"/>
+          </svg>
+        </div>
+        <div>
+          <span>SUSTAIN<span class="text-green">X</span></span>
+        </div>
+      </a>
+      <a href="index.html" class="btn btn-secondary btn-sm">
+        ← Back to Website
+      </a>
+    </div>
+  </header>
+
+  <!-- Signup Form Card -->
+  <main class="container" style="max-width: 520px; margin: 2rem auto; width: 100%;">
+    <div class="card auth-card animate-fade-up" style="padding: 2.75rem 2.25rem;">
+      
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <span style="font-size: 2rem; display: inline-block; margin-bottom: 0.5rem;">🌿</span>
+        <h1 style="font-size: 1.85rem; margin-bottom: 0.35rem;">Create Your Account</h1>
+        <p style="font-size: 0.92rem; color: var(--color-text-muted);">
+          Register as a student or faculty member to track your school's green achievements.
+        </p>
+      </div>
+
+      <div id="signupError" class="badge-danger" style="display: none; padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; font-size: 0.85rem; text-align: center;"></div>
+
+      <form id="signupForm">
+        <div class="form-group">
+          <label class="form-label" for="signupName">Full Name</label>
+          <input type="text" id="signupName" class="form-control" placeholder="e.g. Jordan Bennett" required autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signupEmail">University Email</label>
+          <input type="email" id="signupEmail" class="form-control" placeholder="jordan@sustainx.edu" required autocomplete="email" />
+          <div class="form-hint">Please use your valid college/department email address.</div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signupSchool">Select Your School / Department</label>
+          <select id="signupSchool" class="form-control form-select" required>
+            <option value="">-- Choose Participating School --</option>
+          </select>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="signupPassword">Password</label>
+            <input type="password" id="signupPassword" class="form-control" placeholder="••••••••" required autocomplete="new-password" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="signupConfirmPassword">Confirm Password</label>
+            <input type="password" id="signupConfirmPassword" class="form-control" placeholder="••••••••" required autocomplete="new-password" />
+          </div>
+        </div>
+
+        <div style="font-size: 0.82rem; color: var(--color-text-muted); margin-bottom: 1.25rem; background: var(--color-light-green); padding: 0.75rem; border-radius: var(--radius-sm);">
+          🔒 Security Notice: Newly registered accounts receive standard <strong>Student/Faculty Participant</strong> permissions with read-only access to scores.
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem;">
+          CREATE ACCOUNT
+        </button>
+      </form>
+
+      <div style="text-align: center; margin-top: 1.75rem; padding-top: 1.25rem; border-top: 1px solid var(--color-border-subtle); font-size: 0.9rem; color: var(--color-text-muted);">
+        Already have an account? <a href="login.html" style="font-weight: 700; color: var(--color-primary-green);">Log In</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="padding: 2rem 0; text-align: center; font-size: 0.82rem; color: var(--color-text-light);">
+    © 2026 SUSTAINX – Green Campus Challenge. Inter-School Sustainability Championship.
+  </footer>
+
+  <script src="js/data-store.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
