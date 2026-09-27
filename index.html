@@ -78,7 +78,7 @@
           <span style="font-size: 0.84rem; font-weight: 700; color: var(--color-dark-forest); text-transform: uppercase; letter-spacing: 0.05em;">
             2026–2027 Inter-School Championship Active
           </span>
-          <span class="badge badge-demo">Demo Mode</span>
+
         </div>
 
         <h1 style="font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.15; margin-bottom: 1.25rem; font-weight: 800; letter-spacing: -0.03em;">
@@ -442,9 +442,13 @@
   <!-- Scripts -->
   <script src="js/data-store.js"></script>
   <script src="js/utils.js"></script>
+    <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
   <script src="js/firebase-config.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => { await window.SustainX.DataStore.initFirebase();
       const DataStore = window.SustainX.DataStore;
       const Utils = window.SustainX.Utils;
 

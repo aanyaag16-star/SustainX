@@ -17,16 +17,17 @@
   'use strict';
 
   // Toggle this to true when your Firebase project is ready
-  const USE_FIREBASE = false;
+  const USE_FIREBASE = true;
 
   // Replace with your real Firebase Web App configuration:
   const firebaseConfig = {
-    apiKey: "AIzaSyD-YOUR_FIREBASE_API_KEY_HERE",
-    authDomain: "sustainx-green-campus.firebaseapp.com",
-    projectId: "sustainx-green-campus",
-    storageBucket: "sustainx-green-campus.appspot.com",
-    messagingSenderId: "123456789012",
-    appId: "1:123456789012:web:abcdef1234567890"
+    apiKey: "AIzaSyBpo-6UGo5EXyf-ybpGuQC6Y_F_p2mujp4",
+    authDomain: "sustainx-8b13f.firebaseapp.com",
+    projectId: "sustainx-8b13f",
+    storageBucket: "sustainx-8b13f.firebasestorage.app",
+    messagingSenderId: "767371738320",
+    appId: "1:767371738320:web:bbdfd47b437ee2dc2532d5",
+    measurementId: "G-4XRF7T0B2G"
   };
 
   const FirebaseBridge = {

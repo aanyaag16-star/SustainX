@@ -91,9 +91,7 @@
         </div>
 
         <div style="display: flex; align-items: center; gap: 1rem;">
-          <button id="resetDemoDataBtn" class="btn btn-secondary btn-sm" title="Reload clean initial demo state">
-            🔄 Reset Demo Data
-          </button>
+          
           <div style="display: flex; align-items: center; gap: 0.65rem; background: var(--color-cream); padding: 0.35rem 0.85rem; border-radius: var(--radius-full); border: 1px solid var(--color-border);">
             <div class="user-avatar-circle" style="width: 28px; height: 28px; font-size: 0.75rem;">ER</div>
             <span id="adminUserName" style="font-size: 0.88rem; font-weight: 700; color: var(--color-dark-forest);">Dr. Evelyn Reed</span>
@@ -210,6 +208,10 @@
 
   <script src="../js/data-store.js"></script>
   <script src="../js/utils.js"></script>
+    <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
   <script src="../js/firebase-config.js"></script>
   <script src="../js/admin.js"></script>
 </body>

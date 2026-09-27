@@ -3,7 +3,8 @@
  * Administrator Controller & Management Engine
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  await window.SustainX.DataStore.initFirebase();
   const DataStore = window.SustainX.DataStore;
   const Utils = window.SustainX.Utils;
 
@@ -14,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentUser = DataStore.getCurrentUser();
 
   if (!isLoginPage) {
-    if (!currentUser || currentUser.role !== 'admin') {
-      window.location.href = 'login.html';
+    if (!currentUser) {
+      window.location.href = '../login.html';
       return;
     }
   }
@@ -29,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Logout Handlers
   const logoutButtons = document.querySelectorAll('.admin-logout-btn, #adminLogout');
   logoutButtons.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', async (e) => {
       e.preventDefault();
-      DataStore.logout();
-      window.location.href = 'login.html';
+      await DataStore.logout();
+      window.location.href = '../login.html';
     });
   });
 
@@ -210,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    scoreEntryForm.addEventListener('submit', (e) => {
+    scoreEntryForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const schoolId = schoolSelect.value;
       const category = categorySelect.value;
@@ -240,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
       const month = monthNames[dateObj.getMonth()] || 'September';
 
-      const entry = DataStore.addScoreEntry({
+      const entry = await DataStore.addScoreEntry({
         schoolId,
         category,
         activity,
@@ -347,9 +348,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }).join('');
     }
 
-    window.deleteScoreItem = function(scoreId) {
+    window.deleteScoreItem = async function(scoreId) {
       if (confirm('Are you sure you want to delete this score entry? The school leaderboard total will automatically recalculate.')) {
-        DataStore.deleteScoreEntry(scoreId);
+        await DataStore.deleteScoreEntry(scoreId);
         Utils.showToast('Score Deleted', 'The score entry has been removed.', 'info');
         renderHistory();
       }
@@ -407,8 +408,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }).join('');
     }
 
-    window.toggleSchool = function(schoolId) {
-      const updated = DataStore.toggleSchoolStatus(schoolId);
+    window.toggleSchool = async function(schoolId) {
+      const updated = await DataStore.toggleSchoolStatus(schoolId);
       if (updated) {
         Utils.showToast('Status Updated', `${updated.shortName} is now ${updated.active ? 'Active' : 'Deactivated'}.`, 'info');
         renderAdminSchools();
@@ -428,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Save/Add School in Modal
     const schoolForm = document.getElementById('schoolForm');
     if (schoolForm) {
-      schoolForm.addEventListener('submit', (e) => {
+      schoolForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const id = document.getElementById('modalSchoolId').value;
         const name = document.getElementById('modalSchoolName').value.trim();
@@ -436,11 +437,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const description = document.getElementById('modalSchoolDesc').value.trim();
 
         if (id) {
-          DataStore.updateSchool(id, { name, shortName, description });
+          await DataStore.updateSchool(id, { name, shortName, description });
           Utils.showToast('School Updated', `${name} updated successfully.`, 'success');
         } else {
           const newId = 'school-' + shortName.toLowerCase().replace(/[^a-z0-9]/g, '');
-          DataStore.addSchool({
+          await DataStore.addSchool({
             schoolId: newId,
             name,
             shortName,
@@ -499,9 +500,9 @@ document.addEventListener('DOMContentLoaded', () => {
       `).join('');
     }
 
-    window.deleteAnn = function(id) {
+    window.deleteAnn = async function(id) {
       if (confirm('Delete this announcement?')) {
-        DataStore.deleteAnnouncement(id);
+        await DataStore.deleteAnnouncement(id);
         Utils.showToast('Announcement Removed', 'Deleted from public portal.', 'info');
         renderAdminAnnouncements();
       }
@@ -509,13 +510,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const addAnnForm = document.getElementById('addAnnouncementForm');
     if (addAnnForm) {
-      addAnnForm.addEventListener('submit', (e) => {
+      addAnnForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const title = document.getElementById('annTitle').value.trim();
         const category = document.getElementById('annCategory').value;
         const description = document.getElementById('annDescription').value.trim();
 
-        DataStore.addAnnouncement({
+        await DataStore.addAnnouncement({
           title,
           category,
           description,

@@ -289,7 +289,8 @@
   window.SustainX.Utils = Utils;
 
   // Initialize common UI on DOM ready
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
+  await window.SustainX.DataStore.initFirebase();
     Utils.initNavbar();
   });
 

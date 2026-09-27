@@ -3,14 +3,15 @@
  * Authentication Controller (Client & Admin)
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  await window.SustainX.DataStore.initFirebase();
   const DataStore = window.SustainX.DataStore;
   const Utils = window.SustainX.Utils;
 
   // --- Normal User Login Form ---
   const userLoginForm = document.getElementById('userLoginForm');
   if (userLoginForm) {
-    userLoginForm.addEventListener('submit', (e) => {
+    userLoginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = document.getElementById('loginEmail').value;
       const password = document.getElementById('loginPassword').value;
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (errorDiv) errorDiv.style.display = 'none';
 
-      const result = DataStore.login(email, password);
+      const result = await DataStore.login(email, password);
       if (result.success) {
         Utils.showToast('Welcome Back!', `Signed in as ${result.user.name}`, 'success');
         setTimeout(() => {
@@ -64,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    signupForm.addEventListener('submit', (e) => {
+    signupForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = document.getElementById('signupName').value.trim();
       const email = document.getElementById('signupEmail').value.trim();
@@ -91,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const res = DataStore.signup({
+      const res = await DataStore.signup({
         name,
         email,
         password,
@@ -115,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Admin Login Form (/admin/login.html) ---
   const adminLoginForm = document.getElementById('adminLoginForm');
   if (adminLoginForm) {
-    adminLoginForm.addEventListener('submit', (e) => {
+    adminLoginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = document.getElementById('adminEmail').value.trim();
       const password = document.getElementById('adminPassword').value;
@@ -123,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (errorDiv) errorDiv.style.display = 'none';
 
-      const res = DataStore.login(email, password);
+      const res = await DataStore.login(email, password);
       if (res.success) {
         if (res.user.role === 'admin') {
           Utils.showToast('Admin Authenticated', 'Access granted to SustainX Management Console.', 'success');
@@ -132,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 600);
         } else {
           // If a student tries to log in through admin portal:
-          DataStore.logout();
+          await DataStore.logout();
           if (errorDiv) {
             errorDiv.textContent = 'Access Denied: This account does not possess green audit administrative privileges.';
             errorDiv.style.display = 'block';

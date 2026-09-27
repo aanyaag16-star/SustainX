@@ -3,7 +3,8 @@
  * Public Announcements Feed Controller
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
+  await window.SustainX.DataStore.initFirebase();
   const DataStore = window.SustainX.DataStore;
   const Utils = window.SustainX.Utils;
 
